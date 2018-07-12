@@ -1,0 +1,110 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+ <head>
+
+  <title> numberformatter </title>
+
+  <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+
+<script type="text/javascript" src="js/numberformatter.min.js"></script>
+
+ </head>
+
+ <body>
+
+
+
+  <script>
+
+
+
+$(document).ready(function(){
+
+
+
+//한개의 input 적용
+
+$("#number").val(function(){
+
+	return 	$.number($(this).val());
+
+});
+
+
+
+
+
+//class로 묶어서 한거번에 적용
+
+$(".numberic").each(function(){
+
+	$(this).val($.number($(this).val()));	
+
+});
+
+
+
+
+
+//blur 적용
+
+$('#target').blur(function() {
+
+	 $(this).val($.number($(this).val()));	
+
+});
+
+
+
+
+
+});
+
+
+
+  </script>
+
+
+
+
+
+<div>
+
+<input type="text"  id="number" value="100000000" />
+
+</div>
+
+
+
+<div>
+
+<input type="text"  class="numberic" value="123123123123" />
+
+<input type="text"  class="numberic" value="5236" />
+
+<input type="text"  class="numberic" value="4852500" />
+
+</div>
+
+
+
+<div>
+
+<input type="text"  id="target" value="10000000000" />
+
+</div>
+
+
+
+
+
+ </body>
+
+</html>
+
+
+
+
+출처: http://uiandwe.tistory.com/765 [조아하는모든것]
